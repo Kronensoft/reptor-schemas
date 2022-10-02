@@ -3,19 +3,15 @@
   "type": "object",
   "properties": {
     "size": {
-      "type": "string",
-      "enum": [
-        "A4",
-        "A5",
-        "Letter",
-        "Legal",
-        "Custom"
-      ],
-      "default": "A4"
+      "$ref": "./size.schema.json"
+    },
+    "orientation": {
+      "$ref": "./orientation.schema.json"
     }
   },
   "required": [
-    "size"
+    "size",
+    "orientation"
   ],
   "allOf": [
     {
@@ -32,19 +28,7 @@
       "then": {
         "properties": {
           "customSize": {
-            "type": "object",
-            "properties": {
-              "height": {
-                "type": "number"
-              },
-              "width": {
-                "type": "number"
-              }
-            },
-            "required": [
-              "height",
-              "width"
-            ]
+            "$ref": "./customSize.schema.json"
           }
         },
         "required": [

@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "string",
+  "enum": [
+    "A4",
+    "A5",
+    "Letter",
+    "Legal",
+    "Custom"
+  ],
+  "default": "A4"
+}

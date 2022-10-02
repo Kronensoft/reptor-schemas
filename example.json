@@ -1,0 +1,17 @@
+{
+  "$schema": "./schemas/report.schema.json",
+  "id": "example-report",
+  "guid": "7f51a03a-2433-48c1-a31e-ab090c7432aa",
+  "name": "Reptor Example Report",
+  "document": {
+    "size": "A4",
+    "orientation": "portrait"
+  },
+  "dataSources": [
+    {
+      "id": "example-db",
+      "guid": "42ea54ed-62e4-44e6-a48a-ddbb81ef18f9",
+      "type": "database"
+    }
+  ]
+}
