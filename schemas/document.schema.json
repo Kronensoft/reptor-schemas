@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "size": {
+      "type": "string",
+      "enum": [
+        "A4",
+        "A5",
+        "Letter",
+        "Legal",
+        "Custom"
+      ],
+      "default": "A4"
+    }
+  },
+  "required": [
+    "size"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "size": {
+            "const": "Custom"
+          }
+        },
+        "required": [
+          "size"
+        ]
+      },
+      "then": {
+        "properties": {
+          "customSize": {
+            "type": "object",
+            "properties": {
+              "height": {
+                "type": "number"
+              },
+              "width": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "height",
+              "width"
+            ]
+          }
+        },
+        "required": [
+          "customSize"
+        ]
+      }
+    }
+  ]
+}
